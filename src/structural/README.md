@@ -1,4 +1,4 @@
-# Design Patterns with TypeScript (structural)
+# Design Patterns (structural)
 
 Os padrões estruturais se preocupam com a forma como os objetos são compostos para formar estruturas maiores.
 

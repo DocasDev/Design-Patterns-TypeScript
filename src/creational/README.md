@@ -1,4 +1,4 @@
-# Design Patterns with TypeScript (creational)
+# Design Patterns (creational)
 
 Os padrões de projeto de criação são padrões que abstraem o processo de instanciação de objetos. Eles ajudam a tornar um sistema independente de como seus objetos são representados, criados e compostos. Geralmente, atingem este objetivo delegando tarefas para outros objetos.  
 
