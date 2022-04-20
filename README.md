@@ -1,13 +1,3 @@
-# Design Patterns with TypeScript
+# Design Patterns com TypeScript
 
-Practicing Design Patterns with TypeScript
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/)
-
-## Project Setup
-
-```sh
-npm i
-```
+Estudo de Design Patterns (Padrões de Projeto). Esse estudo faz uso da linguagem TypeScript mas pode ser reproduzido utilizando outras linguagens que façam uso do Paradigma de Orientação à Objetos (OO).
