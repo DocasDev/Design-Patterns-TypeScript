@@ -1,12 +1,12 @@
-import { Singleton } from './Singleton';
+import { ListNumberSingleton } from './ListNumberSingleton';
 
-const instance1: Singleton = Singleton.instance;
+const instance1: ListNumberSingleton = ListNumberSingleton.instance;
 instance1.appendNumberInList(1);
 instance1.appendNumberInList(3);
 instance1.appendNumberInList(5);
 instance1.appendNumberInList(7);
 
-const instance2: Singleton = Singleton.instance;
+const instance2: ListNumberSingleton = ListNumberSingleton.instance;
 instance2.appendNumberInList(2);
 instance2.appendNumberInList(4);
 instance2.appendNumberInList(6);
