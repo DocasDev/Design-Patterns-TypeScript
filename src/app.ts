@@ -1,6 +1,10 @@
 export class App {
-  public handle() {
+  public handle(): void {
     console.log('Initial Class');
+  }
+
+  public secondMethod(): void {
+    console.log('Seconde Method');
   }
 }
 
