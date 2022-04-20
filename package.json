@@ -1,0 +1,23 @@
+{
+  "name": "design-patterns-typescript",
+  "version": "1.0.0",
+  "description": "Practicing Design Patterns with TypeScript",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuodDG/Design-Patterns-TypeScript.git"
+  },
+  "author": "QuodDG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuodDG/Design-Patterns-TypeScript/issues"
+  },
+  "homepage": "https://github.com/QuodDG/Design-Patterns-TypeScript#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
