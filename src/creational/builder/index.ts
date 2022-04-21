@@ -1,6 +1,6 @@
-import { BigCheddarHamburguerBuilder } from './classes/Hamburguers/BigCheddarHamburguerBuilder';
-import { ChickenPremiumHamburguerBuilder } from './classes/Hamburguers/ChickenPremiumHamburguerBuilder';
-import { ScoobyDooHamburguerBuilder } from './classes/Hamburguers/ScoobyDooHamburguerBuilder';
+import { BigCheddarHamburguerBuilder } from './classes/HamburguerBuilders/BigCheddarHamburguerBuilder';
+import { ChickenPremiumHamburguerBuilder } from './classes/HamburguerBuilders/ChickenPremiumHamburguerBuilder';
+import { ScoobyDooHamburguerBuilder } from './classes/HamburguerBuilders/ScoobyDooHamburguerBuilder';
 
 const bigCheddarHamburguerBuilder = new BigCheddarHamburguerBuilder();
 const bigCheddar1 = bigCheddarHamburguerBuilder
