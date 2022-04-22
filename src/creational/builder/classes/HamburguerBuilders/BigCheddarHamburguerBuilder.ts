@@ -1,4 +1,4 @@
-import { HamburguerBuilderContract } from '../../interfaces/HamburguerBuilderContract';
+import { HamburguerBuilderContract } from '../../contracts/HamburguerBuilderContract';
 import { Hamburguer } from '../Hamburguer';
 import {
 	Bun,

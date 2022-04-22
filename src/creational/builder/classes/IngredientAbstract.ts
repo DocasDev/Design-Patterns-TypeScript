@@ -1,4 +1,4 @@
-import { IngredientCompositeContract } from '../interfaces/IngredientCompositeContract';
+import { IngredientCompositeContract } from '../contracts/IngredientCompositeContract';
 
 export abstract class IngredientAbstract
 	implements IngredientCompositeContract
