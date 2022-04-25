@@ -27,21 +27,27 @@ vehicles.push(
 vehicles.push(motorcycleFactory.getVehicle('TUV 741', 'Yamaha V-Max', 'Black'));
 
 for (let i = 0; i < 10; i++) {
-	const amountPassengers = Utils.getRandomNumber(5); //Quantidade de passageiros aleatória
-	const passengers = new Array<Person>();
+	//Quantidade de passageiros aleatória. Mínimo de 1 passageiro
+	const amountPassengers = Utils.getRandomNumber(4) + 1;
+	const passengers =
+		passengersColletion.getRandomsPassengers(amountPassengers);
 
-	for (let j = 0; j < amountPassengers; j++) {
-		const passenger = passengersColletion.getPassenger(
-			Utils.getRandomNumber(passengersColletion.getAmountPassengers()),
-		);
-		if (passenger !== null) passengers.push(passenger);
+	//Escolhe o veículo
+	const vehicle = vehicles[Utils.getRandomNumber(vehicles.length)];
+
+	//Verifica se o veículo está ocupado.
+	if (vehicle.isBusy()) {
+		console.log(Utils.pretier`The ${vehicle.getVehicleLabel()} is busy.`);
+		continue;
 	}
 
-	const client = passengers[0];
-	const vehicle = vehicles[Utils.getRandomNumber(vehicles.length)];
-	if (vehicle.isBusy()) {
-		i--;
-		console.log();
+	try {
+		//Inicia a viagem
+		vehicle.pickUp(...passengers);
+		//Aguarda a viagem terminar para liberar o veículo
+		setTimeout(() => vehicle.dropOff(), 1);
+	} catch (e: unknown) {
+		if (e instanceof Error) console.log(e.message);
 		continue;
 	}
 }

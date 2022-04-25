@@ -46,31 +46,42 @@ export abstract class Vehicle {
 	}
 
 	public resetPassengers(): void {
-		this._passengers = new Array<Person>(this._limitPassengers);
+		this._passengers = new Array<Person>();
+	}
+
+	public getPassengersNames(): string {
+		const passengersNames = new Array<string>();
+		this._passengers.forEach((passenger) =>
+			passengersNames.push(passenger.name),
+		);
+		return passengersNames.join(', ');
+	}
+
+	public getVehicleLabel(): string {
+		return `"${this._model}/${this._color}/${this._plate}"`;
 	}
 
 	public pickUp(...passengers: Person[]): void | never {
 		if (passengers.length > this._limitPassengers) {
-			throw new Error('Passenger limit exceeded');
+			throw new Error(
+				Utils.pretier`${
+					passengers.length
+				} passengers exceed the passengers limit for ${this.getVehicleLabel()}.`,
+			);
 		}
 		this._passengers = passengers;
 		console.log(
-			`A ${this._color} ${this._model} with ${
-				this._plate
-			} license plate is transporting passengers:
-			(${this._passengers.join(', ')}).`,
+			Utils.pretier`A ${this.getVehicleLabel()} is transporting ${
+				passengers.length
+			} passengers:
+			(${this.getPassengersNames()}).`,
 		);
-
-		setTimeout(() => {
-			this.dropOff();
-		}, Utils.getRandomNumber(2000) + 1000);
 	}
 
-	private dropOff(): void {
+	public dropOff(): void {
 		this.resetPassengers();
 		console.log(
-			`Transport is finish.
-			${this._color} ${this._model} with ${this._plate} license plate is idle.`,
+			Utils.pretier`Transport is finish.	${this.getVehicleLabel()} is idle.`,
 		);
 	}
 
