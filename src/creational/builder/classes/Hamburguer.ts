@@ -11,6 +11,7 @@ export class Hamburguer implements IngredientCompositeContract {
 		const price = this._ingredients.reduce((sum, ingredient) => {
 			return sum + ingredient.getAmount() * ingredient.getPrice();
 		}, 0);
+
 		return parseFloat(price.toFixed(2));
 	}
 
