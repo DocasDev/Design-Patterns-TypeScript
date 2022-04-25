@@ -30,7 +30,7 @@ Veja o código dessa mesma pasta.
 
 ## Estrutura
 
-Veja a pasta diagramas nessa mesma pasta.
+Veja a pasta diagrams nessa mesma pasta.
 
 ## Aplicabilidade
 

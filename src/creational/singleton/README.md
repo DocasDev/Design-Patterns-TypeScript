@@ -23,7 +23,7 @@ Em entrevista, anos após a criação do livro, Erich Gamma (um dos autores), me
 
 ## Estrutura
 
-Veja a pasta diagramas.
+Veja a pasta diagrams.
 
 ## Aplicabilidade
 
@@ -40,6 +40,10 @@ Isso pode mudar de linguagem para linguagem, em Python seria de uma maneira, em 
 - Declarar um método público (getter) para obter a instância do Singleton;
 - Na chamada do método público, adicione *lazy instantiation*, ou seja, verifique se uma instância do Singleton já foi criada; se foi, retorne-a, se não crie uma nova instância e retorne-a.
 - Não permita que novas instâncias da classe. Você pode atingir facilmente este objetivo fazendo o construtor da classe privado.
+
+## Implementação - Prática
+
+Veja o código dessa mesma pasta.
 
 ## Consequências
 

@@ -18,7 +18,7 @@ _Definir uma interface para criar um objeto, mas deixar as subclasses decidirem 
 
 ## Estrutura
 
-Veja a pasta diagramas.
+Veja a pasta diagrams.
 
 ## Aplicabilidade
 
@@ -36,6 +36,10 @@ Observação importante: todos os objetos criados por um factory method tendem a
 2. Crie classes que implementam a interface dos produtos (por exemplo, ConcreteProduct1, ConcreteProduct2...)
 3. Crie uma classe (Creator) que implementa ou contem o método fábrica (factory method). Essa classe pode conter dados e outros métodos. São raros os casos onde a classe Creator é simplesmente uma interface com o factory method. O método fábrica é responsável por criar produtos que implementam a interface "Product".
 4. Crie classes concretas que estendem a classe Creator e implementam o método fábrica. As classes ConcreteCreator podem retornar produtos diferentes, contando que esses produtos implementem a interface Product.
+
+## Implementação - Prática
+
+Veja o código dessa mesma pasta.
 
 ## Consequências
 
