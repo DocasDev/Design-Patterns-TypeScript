@@ -16,13 +16,13 @@ console.log(mage1);
 console.log('\n--------\n');
 
 console.log('\n--------\n');
-const assasin1 = assassinFactory.createCharacter();
-assasin1.attachWeapon(assassinFactory.createWeapon());
-assasin1.attachArmor(assassinFactory.createArmor());
-console.log(assasin1);
-assasin1.takeDamage(100);
-console.log(`Mage Damage: ${assasin1.causeDamage()}`);
-console.log(assasin1);
+const assassin1 = assassinFactory.createCharacter();
+assassin1.attachWeapon(assassinFactory.createWeapon());
+assassin1.attachArmor(assassinFactory.createArmor());
+console.log(assassin1);
+assassin1.takeDamage(100);
+console.log(`Mage Damage: ${assassin1.causeDamage()}`);
+console.log(assassin1);
 console.log('\n--------\n');
 
 console.log('\n--------\n');
