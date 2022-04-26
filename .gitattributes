@@ -1,7 +1,0 @@
-# Defina o comportamento padrão, caso as pessoas não tenham configurado o core.autocrlf.
-* text eol=lf
-
-# Declare explicitamente os arquivos de texto que você deseja que sempre sejam normalizados e convertidos
-# em delimitadores de linha nativos ao fazer checkout.
-*.ts text
-*.js text
