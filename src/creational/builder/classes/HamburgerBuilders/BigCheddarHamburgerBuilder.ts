@@ -1,5 +1,5 @@
-import { HamburguerBuilderContract } from '../../contracts/HamburguerBuilderContract';
-import { Hamburguer } from '../Hamburguer';
+import { HamburgerBuilderContract } from '../../contracts/HamburgerBuilderContract';
+import { Hamburger } from '../Hamburger';
 import {
 	Bun,
 	Cheddar,
@@ -11,28 +11,28 @@ import {
 	Tomato,
 } from '../Ingredients';
 
-export class BigCheddarHamburguerBuilder implements HamburguerBuilderContract {
-	private _hamburguer: Hamburguer;
+export class BigCheddarHamburgerBuilder implements HamburgerBuilderContract {
+	private _hamburger: Hamburger;
 
 	constructor() {
-		this._hamburguer = new Hamburguer();
+		this._hamburger = new Hamburger();
 	}
 
 	public reset(): this {
-		this._hamburguer = new Hamburguer();
+		this._hamburger = new Hamburger();
 		return this;
 	}
 
 	public addSalad(): this {
 		const lettuce = new Lettuce(0.5, 2);
 		const cucumber = new Cucumber(0.4, 4);
-		this._hamburguer.addIngredient(lettuce, cucumber);
+		this._hamburger.addIngredient(lettuce, cucumber);
 		return this;
 	}
 
 	public addSauce(): this {
 		const specialSauce = new SpecialSauce(2, 1);
-		this._hamburguer.addIngredient(specialSauce);
+		this._hamburger.addIngredient(specialSauce);
 		return this;
 	}
 
@@ -42,15 +42,15 @@ export class BigCheddarHamburguerBuilder implements HamburguerBuilderContract {
 		const meat = new Meat(10, 2);
 		const onion = new Onion(0.3, 6);
 		const tomato = new Tomato(0.2, 3);
-		this._hamburguer.addIngredient(bun, cheddar, meat, onion, tomato);
+		this._hamburger.addIngredient(bun, cheddar, meat, onion, tomato);
 		return this;
 	}
 
 	public getPrice(): number {
-		return this._hamburguer.getPrice();
+		return this._hamburger.getPrice();
 	}
 
-	public getHamburguer(): Hamburguer {
-		return this._hamburguer;
+	public getHamburger(): Hamburger {
+		return this._hamburger;
 	}
 }

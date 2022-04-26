@@ -1,5 +1,5 @@
-import { HamburguerBuilderContract } from '../../contracts/HamburguerBuilderContract';
-import { Hamburguer } from '../Hamburguer';
+import { HamburgerBuilderContract } from '../../contracts/HamburgerBuilderContract';
+import { Hamburger } from '../Hamburger';
 import {
 	Bun,
 	Cheddar,
@@ -14,29 +14,29 @@ import {
 	Tomato,
 } from '../Ingredients';
 
-export class ScoobyDooHamburguerBuilder implements HamburguerBuilderContract {
-	private _hamburguer: Hamburguer;
+export class ScoobyDooHamburgerBuilder implements HamburgerBuilderContract {
+	private _hamburger: Hamburger;
 
 	constructor() {
-		this._hamburguer = new Hamburguer();
+		this._hamburger = new Hamburger();
 	}
 
 	public reset(): this {
-		this._hamburguer = new Hamburguer();
+		this._hamburger = new Hamburger();
 		return this;
 	}
 
 	public addSalad(): this {
 		const lettuce = new Lettuce(0.5, 2);
 		const cucumber = new Cucumber(0.4, 4);
-		this._hamburguer.addIngredient(lettuce, cucumber);
+		this._hamburger.addIngredient(lettuce, cucumber);
 		return this;
 	}
 
 	public addSauce(): this {
 		const ketchup = new Ketchup(0.5, 1);
 		const mustard = new Mustard(0.5, 1);
-		this._hamburguer.addIngredient(ketchup, mustard);
+		this._hamburger.addIngredient(ketchup, mustard);
 		return this;
 	}
 
@@ -48,7 +48,7 @@ export class ScoobyDooHamburguerBuilder implements HamburguerBuilderContract {
 		const egg = new Egg(2, 3);
 		const onion = new Onion(0.3, 6);
 		const tomato = new Tomato(0.2, 3);
-		this._hamburguer.addIngredient(
+		this._hamburger.addIngredient(
 			bun,
 			cheddar,
 			mozzarella,
@@ -61,10 +61,10 @@ export class ScoobyDooHamburguerBuilder implements HamburguerBuilderContract {
 	}
 
 	public getPrice(): number {
-		return this._hamburguer.getPrice();
+		return this._hamburger.getPrice();
 	}
 
-	public getHamburguer(): Hamburguer {
-		return this._hamburguer;
+	public getHamburger(): Hamburger {
+		return this._hamburger;
 	}
 }

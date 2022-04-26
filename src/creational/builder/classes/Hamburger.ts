@@ -1,6 +1,6 @@
 import { IngredientCompositeContract } from '../contracts/IngredientCompositeContract';
 
-export class Hamburguer implements IngredientCompositeContract {
+export class Hamburger implements IngredientCompositeContract {
 	private readonly _ingredients: IngredientCompositeContract[];
 
 	constructor() {
