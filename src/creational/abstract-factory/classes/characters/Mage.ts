@@ -3,7 +3,7 @@ import { Character } from '../Character';
 
 export class Mage extends Character implements CharacterContract {
 	takeDamage(damage: number): void {
-		const realDamage = damage - this.resistence * 0.1;
+		const realDamage = damage - this.resistance * 0.1;
 		this.currentLife -= realDamage;
 	}
 	causeDamage(): number {

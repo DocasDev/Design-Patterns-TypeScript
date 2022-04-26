@@ -3,7 +3,7 @@ import { Character } from '../Character';
 
 export class Assassin extends Character implements CharacterContract {
 	takeDamage(damage: number): void {
-		const realDamage = damage - this.resistence * 0.2;
+		const realDamage = damage - this.resistance * 0.2;
 		this.currentLife -= realDamage;
 	}
 	causeDamage(): number {

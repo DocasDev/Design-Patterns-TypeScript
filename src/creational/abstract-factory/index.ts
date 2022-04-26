@@ -5,7 +5,6 @@ import { SwordsmanFactory } from './classes/factories/SwordsmanFactory';
 const mageFactory = new MageFactory();
 const assassinFactory = new AssassinFactory();
 const swordsmanFactory = new SwordsmanFactory();
-
 console.log('\n--------\n');
 const mage1 = mageFactory.createCharacter();
 mage1.attachWeapon(mageFactory.createWeapon());

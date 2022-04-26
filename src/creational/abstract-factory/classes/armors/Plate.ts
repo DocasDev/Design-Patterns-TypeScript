@@ -5,7 +5,7 @@ export class Plate implements ArmorContract {
 		return 0;
 	}
 
-	getResistenceBonus(): number {
+	getResistanceBonus(): number {
 		return 20;
 	}
 }

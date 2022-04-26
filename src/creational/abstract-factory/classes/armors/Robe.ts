@@ -5,7 +5,7 @@ export class Robe implements ArmorContract {
 		return 15;
 	}
 
-	getResistenceBonus(): number {
+	getResistanceBonus(): number {
 		return 5;
 	}
 }

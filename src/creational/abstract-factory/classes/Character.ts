@@ -7,15 +7,15 @@ export abstract class Character {
 	private _currentLife!: number;
 	private _attack: number;
 	private _dexterity: number;
-	private _resistence: number;
+	private _resistance: number;
 	private _weapon: WeaponContract | null;
 	private _armor: ArmorContract | null;
 
-	constructor(attack: number, dexterity: number, resistence: number) {
+	constructor(attack: number, dexterity: number, resistance: number) {
 		this._level = 1;
 		this._attack = attack;
 		this._dexterity = dexterity;
-		this._resistence = resistence;
+		this._resistance = resistance;
 		this._weapon = null;
 		this._armor = null;
 		this.updateAttributes();
@@ -55,8 +55,8 @@ export abstract class Character {
 		return this._dexterity;
 	}
 
-	public get resistence(): number {
-		return this._resistence;
+	public get resistance(): number {
+		return this._resistance;
 	}
 
 	private updateAttributes(): void {
@@ -76,10 +76,10 @@ export abstract class Character {
 		this._dexterity =
 			this._weapon !== null ? this._weapon.getDexterityBonus() : 0;
 		this._dexterity += this._level * 0.02;
-		//Resistence
-		this._resistence =
-			this._armor !== null ? this._armor.getResistenceBonus() : 0;
-		this._resistence += this._level * 0.01;
+		//resistance
+		this._resistance =
+			this._armor !== null ? this._armor.getResistanceBonus() : 0;
+		this._resistance += this._level * 0.01;
 	}
 
 	public levelUp(amount: number): void {

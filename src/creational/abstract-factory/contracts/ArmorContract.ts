@@ -1,4 +1,4 @@
 export interface ArmorContract {
-	getResistenceBonus(): number;
+	getResistanceBonus(): number;
 	getLifeBonus(): number;
 }

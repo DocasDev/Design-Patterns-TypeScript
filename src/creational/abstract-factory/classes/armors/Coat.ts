@@ -5,7 +5,7 @@ export class Coat implements ArmorContract {
 		return 10;
 	}
 
-	getResistenceBonus(): number {
+	getResistanceBonus(): number {
 		return 10;
 	}
 }
