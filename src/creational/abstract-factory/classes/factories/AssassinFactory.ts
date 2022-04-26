@@ -4,8 +4,8 @@ import { Assassin } from '../characters/Assassin';
 import { Knife } from '../weapons/Knife';
 
 export class AssassinFactory implements CharacterFactoryContract {
-	public createCharacter(): Assassin {
-		return new Assassin(5, 15, 10);
+	public createCharacter(name: string): Assassin {
+		return new Assassin(name, 5, 15, 10);
 	}
 
 	public createWeapon(): Knife {

@@ -2,6 +2,7 @@ import { ArmorContract } from '../contracts/ArmorContract';
 import { WeaponContract } from '../contracts/WeaponContract';
 
 export abstract class Character {
+	private _name: string;
 	private _level: number;
 	private _maxLife!: number;
 	private _currentLife!: number;
@@ -11,7 +12,13 @@ export abstract class Character {
 	private _weapon: WeaponContract | null;
 	private _armor: ArmorContract | null;
 
-	constructor(attack: number, dexterity: number, resistance: number) {
+	constructor(
+		name: string,
+		attack: number,
+		dexterity: number,
+		resistance: number,
+	) {
+		this._name = name;
 		this._level = 1;
 		this._attack = attack;
 		this._dexterity = dexterity;
@@ -19,6 +26,14 @@ export abstract class Character {
 		this._weapon = null;
 		this._armor = null;
 		this.updateAttributes();
+	}
+
+	public get name(): string {
+		return this._name;
+	}
+
+	public set name(name: string) {
+		this._name = name;
 	}
 
 	public get maxLife(): number {
@@ -39,12 +54,16 @@ export abstract class Character {
 	}
 
 	public set currentLife(amount: number) {
+		amount = Math.floor(amount);
+		if (amount < this._currentLife)
+			this.announceDamage(this._currentLife - amount);
+
 		if (amount < 0) {
 			this._currentLife = 0;
 			return;
 		}
 
-		this._currentLife = Math.floor(amount);
+		this._currentLife = amount;
 	}
 
 	public get attack(): number {
@@ -59,10 +78,15 @@ export abstract class Character {
 		return this._resistance;
 	}
 
+	protected announceDamage(amount: number): void {
+		console.log(`The "${this._name}" character received ${amount} damage.`);
+	}
+
 	private updateAttributes(): void {
 		//Life
-		this._maxLife =
-			1000 + (this._armor !== null ? this._armor.getLifeBonus() : 0);
+		this._maxLife = 10000;
+		this._maxLife += this._armor !== null ? this._armor.getLifeBonus() : 0;
+		this._maxLife += this._level * 100;
 		if (
 			this._currentLife === undefined ||
 			this._currentLife > this._maxLife
@@ -71,15 +95,15 @@ export abstract class Character {
 		//Attack
 		this._attack =
 			this._weapon !== null ? this._weapon.getAttackBonus() : 0;
-		this._attack += this._level * 0.01;
+		this._attack += this._level * 0.2;
 		//Dexterity
 		this._dexterity =
 			this._weapon !== null ? this._weapon.getDexterityBonus() : 0;
-		this._dexterity += this._level * 0.02;
-		//resistance
+		this._dexterity += this._level * 0.2;
+		//Resistance
 		this._resistance =
 			this._armor !== null ? this._armor.getResistanceBonus() : 0;
-		this._resistance += this._level * 0.01;
+		this._resistance += this._level * 0.2;
 	}
 
 	public levelUp(amount: number): void {

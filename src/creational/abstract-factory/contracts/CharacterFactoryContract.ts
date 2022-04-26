@@ -3,7 +3,7 @@ import { CharacterContract } from './CharacterContract';
 import { WeaponContract } from './WeaponContract';
 
 export interface CharacterFactoryContract {
-	createCharacter(): CharacterContract;
+	createCharacter(name: string): CharacterContract;
 	createWeapon(): WeaponContract;
 	createArmor(): ArmorContract;
 }

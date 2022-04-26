@@ -4,8 +4,8 @@ import { Mage } from '../characters/Mage';
 import { Rod } from '../weapons/Rod';
 
 export class MageFactory implements CharacterFactoryContract {
-	public createCharacter(): Mage {
-		return new Mage(15, 10, 5);
+	public createCharacter(name: string): Mage {
+		return new Mage(name, 15, 10, 5);
 	}
 
 	public createWeapon(): Rod {
