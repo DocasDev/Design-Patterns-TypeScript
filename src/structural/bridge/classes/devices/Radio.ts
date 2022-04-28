@@ -1,7 +1,6 @@
-import { DeviceContract } from '../../contracts/DeviceContract';
 import { SoundDeviceContract } from '../../contracts/SoundDeviceContract';
 
-export class Radio implements DeviceContract, SoundDeviceContract {
+export class Radio implements SoundDeviceContract {
 	protected _name: string;
 	protected _make: string;
 	protected _model: string;

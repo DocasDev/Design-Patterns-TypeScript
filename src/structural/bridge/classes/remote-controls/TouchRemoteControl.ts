@@ -1,11 +1,8 @@
 import { DeviceContract } from '../../contracts/DeviceContract';
 import { SoundDeviceContract } from '../../contracts/SoundDeviceContract';
-import { TouchRemoteControlContract } from '../../contracts/TouchRemoteControlContract';
 import { TouchSoundRemoteControlContract } from '../../contracts/TouchSoundRemoteControlContract';
 
-export class TouchRemoteControl
-	implements TouchRemoteControlContract, TouchSoundRemoteControlContract
-{
+export class TouchRemoteControl implements TouchSoundRemoteControlContract {
 	protected readonly _device: DeviceContract;
 
 	constructor(device: DeviceContract) {

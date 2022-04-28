@@ -7,7 +7,7 @@ import { TouchRemoteControl } from './classes/remote-controls/TouchRemoteControl
 
 const tv = new TV('Living room TV', 'Samsung', '50AU7700');
 const radio = new Radio('Bedroom radio', 'Motorola', 'DEP450');
-const light = new Light('Bedroom light', 'Xioami', 'Smart Light Mi');
+const light = new Light('Bedroom light', 'Xiaomi', 'Smart Light Mi');
 
 const basicTVControl = new BasicRemoteControl(tv);
 const basicRadioControl = new BasicRemoteControl(radio);

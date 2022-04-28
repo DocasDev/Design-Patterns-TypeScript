@@ -1,7 +1,6 @@
-import { DeviceContract } from '../../contracts/DeviceContract';
-import { SoundDeviceContract } from '../../contracts/SoundDeviceContract';
+import { ScreenDeviceContract } from '../../contracts/ScreenDeviceContract';
 
-export class TV implements DeviceContract, SoundDeviceContract {
+export class TV implements ScreenDeviceContract {
 	protected _name: string;
 	protected _make: string;
 	protected _model: string;

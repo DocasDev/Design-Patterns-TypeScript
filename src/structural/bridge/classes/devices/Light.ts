@@ -1,7 +1,6 @@
-import { DeviceContract } from '../../contracts/DeviceContract';
 import { LightDeviceContract } from '../../contracts/LightDeviceContract';
 
-export class Light implements DeviceContract, LightDeviceContract {
+export class Light implements LightDeviceContract {
 	protected _name: string;
 	protected _make: string;
 	protected _model: string;

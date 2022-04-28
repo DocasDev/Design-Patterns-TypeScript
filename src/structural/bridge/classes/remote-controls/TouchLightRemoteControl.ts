@@ -1,10 +1,9 @@
 import { DeviceContract } from '../../contracts/DeviceContract';
 import { LightDeviceContract } from '../../contracts/LightDeviceContract';
 import { TouchLightRemoteControlContract } from '../../contracts/TouchLightRemoteControlContract';
-import { TouchRemoteControlContract } from '../../contracts/TouchRemoteControlContract';
 
 export class TouchLightRemoteControl
-	implements TouchRemoteControlContract, TouchLightRemoteControlContract
+	implements TouchLightRemoteControlContract
 {
 	protected readonly _device: DeviceContract;
 
