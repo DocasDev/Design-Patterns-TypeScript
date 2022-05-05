@@ -15,7 +15,7 @@ export class ExperienceEvent {
 		const diffLevel = player.level - monster.getLevel();
 		const mobExperience = monster.getAmountExperience();
 
-		if (diffLevel <= 10) {
+		if (diffLevel === 0) {
 			this._experienceBonus = 10;
 		}
 

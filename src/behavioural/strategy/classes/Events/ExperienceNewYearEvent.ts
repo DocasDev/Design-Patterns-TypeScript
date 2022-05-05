@@ -2,7 +2,7 @@ import { MonsterContract } from '../../contracts/MonsterContract';
 import { Player } from '../Player';
 import { ExperienceEvent } from './ExperienceEvent';
 
-export class ExpecienceNewYearEvent extends ExperienceEvent {
+export class ExperienceNewYearEvent extends ExperienceEvent {
 	public getExperienceBonus(
 		player: Player,
 		monster: MonsterContract,
@@ -11,7 +11,7 @@ export class ExpecienceNewYearEvent extends ExperienceEvent {
 		const mobExperience = monster.getAmountExperience();
 
 		if (diffLevel <= 20) {
-			this._experienceBonus = 500;
+			this._experienceBonus = 100;
 		}
 
 		return mobExperience + mobExperience * (this._experienceBonus / 100);

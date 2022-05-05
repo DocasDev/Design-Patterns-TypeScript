@@ -12,8 +12,9 @@ export class Game {
 	}
 
 	public defeatMonster(monster: MonsterContract): void {
-		this._player.amountExperience +=
-			this._experienceEvent.getExperienceBonus(this._player, monster);
+		this._player.receiveExperience(
+			this._experienceEvent.getExperienceBonus(this._player, monster),
+		);
 	}
 
 	public setExperienceEvent(event: ExperienceEvent): void {
