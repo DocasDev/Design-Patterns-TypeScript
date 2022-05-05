@@ -34,32 +34,35 @@ export class Player {
 
 		this._level += amount;
 		this._maxExperiencePerLevel += this._level * 20;
-		console.log(`The player "${this._name}" level up to ${this._level}.\n`);
-	}
-
-	public receiveExperience(amount: number): void {
-		const percentAmount = this.calculateExperience(amount).toFixed(2);
-
 		console.log(
-			`The player "${this._name}" received ${amount}(${percentAmount}%) experience.\nExperience total: ${this._amountExperience}\n`,
+			`---\nThe player "${this._name}" level up to ${this._level}.\n---`,
 		);
 	}
 
-	public calculateExperience(amount: number): number {
-		let percent = 0;
-		let diffExperience = amount;
+	public receiveExperience(monsterName: string, amount: number): void {
+		const percentAmount = this.calculateExperience(amount).toFixed(2);
 
-		if (amount >= this._maxExperiencePerLevel) {
-			diffExperience =
-				this._maxExperiencePerLevel - this._amountExperience;
-			amount -= diffExperience;
+		console.log(
+			`---\nThe player "${this._name}" defeated a "${monsterName}"\nand received ${amount}(${percentAmount}%) experience.\n---\n`,
+		);
+	}
+
+	private calculateExperience(amount: number): number {
+		const amountExperienceToNextLevel =
+			this._maxExperiencePerLevel - this._amountExperience;
+		let percent = (amount * 100) / this._maxExperiencePerLevel;
+
+		if (amount >= amountExperienceToNextLevel) {
+			amount -= amountExperienceToNextLevel;
 			this._amountExperience = 0;
+			percent =
+				(amountExperienceToNextLevel * 100) /
+				this._maxExperiencePerLevel;
 			this.levelUp(1);
-			percent += this.calculateExperience(amount);
+			return percent + this.calculateExperience(amount);
 		}
 
-		percent += (diffExperience * 100) / this._maxExperiencePerLevel;
-
+		this._amountExperience += amount;
 		return percent;
 	}
 }

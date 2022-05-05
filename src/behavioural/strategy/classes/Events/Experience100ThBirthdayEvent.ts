@@ -1,21 +1,15 @@
 import { MonsterContract } from '../../contracts/MonsterContract';
 import { Player } from '../Player';
+import { ExperienceEvent } from './ExperienceEvent';
 
-export class ExperienceEvent {
-	protected _experienceBonus: number;
-
-	constructor() {
-		this._experienceBonus = 0;
-	}
-
+export class Experience100ThBirthdayEvent extends ExperienceEvent {
 	public getExperienceBonus(
 		player: Player,
 		monster: MonsterContract,
 	): number {
-		const diffLevel = monster.getLevel() - player.level;
 		const mobExperience = monster.getAmountExperience();
 
-		this._experienceBonus = Math.floor(diffLevel / 5) * 0.1;
+		this._experienceBonus = 1.5;
 
 		return mobExperience + mobExperience * this._experienceBonus;
 	}

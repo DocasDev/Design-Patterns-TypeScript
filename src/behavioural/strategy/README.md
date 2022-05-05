@@ -14,7 +14,7 @@ Veja um exemplo de um problema e a solução do strategy.
 
 ### Problema
 
-Temos um jogo em que para cada evento de bônus de experiência deve ser aplicado uma bonificação diferente para cada monstro derrotado. Cada evento deve ter suas próprias estratégias de bonificação.
+Temos um jogo em que para cada evento de bônus de experiência, deve ser aplicado uma bonificação diferente para os monstros derrotados. Cada evento deve ter suas próprias estratégias de bonificação.
 
 ---
 
