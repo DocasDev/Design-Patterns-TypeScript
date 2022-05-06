@@ -2,7 +2,7 @@ import { CommandContract } from '../../contracts/CommandContract';
 import { SmartLight } from '../devices/SmartLight';
 
 export class SmartLightDecreaseIntensityCommand implements CommandContract {
-	private _device: SmartLight;
+	private readonly _device: SmartLight;
 
 	constructor(device: SmartLight) {
 		this._device = device;
