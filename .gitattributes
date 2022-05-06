@@ -5,3 +5,9 @@
 # em delimitadores de linha nativos ao fazer checkout.
 *.ts text
 *.js text
+
+# These files are binary and should be left untouched
+# (binary is macro for -text -diff)
+*.gif binary
+*.jpg binary
+*.png binary
