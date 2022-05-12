@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { CommandContract } from '../contracts/CommandContract';
 
 export type SmartHouseCommmands = {
