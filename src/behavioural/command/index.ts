@@ -25,7 +25,6 @@ smartHouseApp.addCommand('btn-3', bedroomLightDecreaseIntensityCommand);
 
 smartHouseApp.executeCommand('btn-1');
 smartHouseApp.undoCommand('btn-1');
-smartHouseApp.executeCommand('btn-1');
 
 smartHouseApp.executeCommand('btn-2');
 smartHouseApp.undoCommand('btn-2');

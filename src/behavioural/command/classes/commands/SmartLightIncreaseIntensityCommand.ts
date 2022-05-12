@@ -1,10 +1,11 @@
 import { CommandContract } from '../../contracts/CommandContract';
 import { SmartLight } from '../devices/SmartLight';
 
-export class SmartLightIncreaseIntensityCommand implements CommandContract {
+export class SmartLightIncreaseIntensityCommand extends CommandContract {
 	private readonly _device: SmartLight;
 
 	constructor(device: SmartLight) {
+		super();
 		this._device = device;
 	}
 

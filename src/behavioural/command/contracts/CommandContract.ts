@@ -1,4 +1,4 @@
-export interface CommandContract {
-	execute(): void;
-	undo(): void;
+export abstract class CommandContract {
+	abstract execute(): void;
+	undo(): void{}
 }
