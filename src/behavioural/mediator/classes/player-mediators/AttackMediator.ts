@@ -14,8 +14,10 @@ export class AttackMediator implements PlayerMediator{
     
     calculateDamage(target: PlayerContract): void {
         if(this._player === null){
+            console.error('AttackMediator not found.');
             return;
         }
+        
         const playerDamage = this._player.getDamage();
         const targetDefense = target.getDefense();
         const maxDamage = playerDamage - targetDefense;

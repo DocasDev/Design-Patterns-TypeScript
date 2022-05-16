@@ -3,34 +3,43 @@ import { Player } from "./classes/Player";
 import { AttackMediator } from "./classes/player-mediators/AttackMediator";
 import { PlayerContract } from "./contracts/PlayerContract";
 
+type Winner = PlayerContract | null;
+
 const attackMediator = new AttackMediator();
-
-const player1 = new Player('10001', 'P-01', 20, 5, 10, 500);
-player1.attachAttackMediator(attackMediator);
-
-const player2 = new Player('10002', 'P-02', 20, 5, 10, 500);
-player2.attachAttackMediator(attackMediator);
-
+const player1 = new Player(
+    {
+        guid: '10001', 
+        name: 'P-01', 
+        strength: 20, 
+        dexterity: 5, 
+        resistance: 10, 
+        maxLife: 500
+    }, 
+    attackMediator
+);
+const player2 = new Player(
+    {
+        guid: '10002', 
+        name: 'P-02', 
+        strength: 20, 
+        dexterity: 5, 
+        resistance: 10, 
+        maxLife: 500
+    }, 
+    attackMediator
+);
 const game = new Game();
 game.addPlayer(player1, player2);
 
-let winner: PlayerContract | null = null;
-let i = 0;
-let attackerGuid = '';
-let targetGuid = '';
-while(winner === null){
-    if(i % 2 === 0){
-        attackerGuid = player1.getGuid();
-        targetGuid = player2.getGuid();
-    }else{
-        attackerGuid = player2.getGuid();
-        targetGuid = player1.getGuid();
-    }
+let winner: Winner = null;
+let attackerGuid = player1.getGuid();
+let targetGuid = player2.getGuid();
 
+while(winner === null){
     game.doAttack(attackerGuid, targetGuid);
     winner = game.getWinner();
-    i++;
+    //Switch players to next turn
+    [attackerGuid, targetGuid] = [targetGuid, attackerGuid];
 }
 
-console.log(`The player "${winner.getName()}" is winner!`);
-console.log(`Battle finish in "${i + 1}" turns.\n---\n`);
+console.log(`The player "${winner.getName()}" is winner!\n---\n`);

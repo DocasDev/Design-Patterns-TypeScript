@@ -22,12 +22,7 @@ export class Game{
             return;
         }
 
-        const attackMediator = player.getAttackMediator();
-        if(attackMediator === null){
-            return;
-        }
-
-        attackMediator.calculateDamage(target);
+        player.getAttackMediator().calculateDamage(target);
     }
 
     public getWinner(): PlayerContract | null{
